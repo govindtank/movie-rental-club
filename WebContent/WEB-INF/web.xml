@@ -14,4 +14,14 @@
     <servlet-name>ServletLogin</servlet-name>
     <url-pattern>/Login</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletMovies</display-name>
+    <servlet-name>ServletMovies</servlet-name>
+    <servlet-class>org.movieRental.servlet.ServletMovies</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletMovies</servlet-name>
+    <url-pattern>/Movies</url-pattern>
+  </servlet-mapping>
 </web-app>

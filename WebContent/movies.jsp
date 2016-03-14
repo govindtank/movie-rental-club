@@ -10,6 +10,7 @@
 <body>
 
 <h1> Your Movies</h1>
+
 <input type="text" name="txtSearch" id="inputSearch" placeholder="Search"/>
 <button  type="submit">Search</button>
 
@@ -20,8 +21,8 @@
 		</tr>
 	<c:forEach  items="${movie}" var="m">
 		<tr>
-			<td>${p.getName()}</td>	
-			<td>${p.getReleaseYear()}</td>
+			<td>${m.getName()}</td>	
+			<td>${m.getReleaseYear()}</td>
 
 		</tr>
 

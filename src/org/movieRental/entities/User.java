@@ -1,8 +1,11 @@
 package org.movieRental.entities;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -14,6 +17,18 @@ public class User {
 	private String user;
 	private String password;
 	
+	@OneToMany(mappedBy="user")
+	private Set<Movie>movie;
+	
+	
+	public Set<Movie> getMovie() {
+		return movie;
+	}
+
+	public void setMovie(Set<Movie> movie) {
+		this.movie = movie;
+	}
+
 	public User(){}
 
 	public User(int id, String user, String password) {
