@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h1> Your Movies</h1>
+<h1> ${username.getUser()}'s Movies</h1>
 
 <input type="text" name="txtSearch" id="inputSearch" placeholder="Search"/>
 <button  type="submit">Search</button>

@@ -16,10 +16,20 @@ public class Movie {
 	private String name;
 	private String releaseYear;
 	
+	
+	
 	@ManyToOne
 	@JoinColumn(name="idUser")
 	private User user;
 	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public Movie (){}
 
 	public Movie(int id, String name, String releaseYear) {

@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.movieRental.entities.User;
 import org.movieRental.model.ModelUser;
@@ -35,7 +36,7 @@ public class ServletLogin extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		
+		HttpSession session = request.getSession(true);
 		
 		String username = request.getParameter("txtUser").trim();
 		String password = request.getParameter("txtPassword").trim();
@@ -43,7 +44,7 @@ public class ServletLogin extends HttpServlet {
 		User user = model.getUserByName(username);
 		
 		if (result == true){
-			request.getSession().setAttribute("username", user);
+			session.setAttribute("username", user);
 			response.sendRedirect("Movies");
 		}else{
 			response.sendRedirect("login.jsp");

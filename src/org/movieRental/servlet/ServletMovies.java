@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.movieRental.entities.Movie;
-
+import org.movieRental.entities.User;
 import org.movieRental.model.ModelMovie;
 
 /**
@@ -30,8 +30,12 @@ public class ServletMovies extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		
-		ArrayList<Movie> movie = model.ShowMovies();
+		User user= (User) request.getSession().getAttribute("username");
+		
+		
+		ArrayList<Movie> movie = model.ShowMoviesByUser(user.getId());
 		request.setAttribute("movie", movie);
 		request.getRequestDispatcher("movies.jsp").forward(request, response);
 		
