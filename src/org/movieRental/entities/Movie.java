@@ -7,6 +7,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="movies")
 public class Movie {
@@ -15,7 +16,6 @@ public class Movie {
 	private int id;
 	private String name;
 	private String releaseYear;
-	
 	
 	
 	@ManyToOne
@@ -38,6 +38,7 @@ public class Movie {
 		this.name = name;
 		this.releaseYear = releaseYear;
 	}
+	
 
 	public int getId() {
 		return id;

@@ -45,9 +45,13 @@ public class ServletMovies extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		User user= (User) request.getSession().getAttribute("username");
 		
+		String movie =request.getParameter("txtMovie");
+		String release =request.getParameter("txtRelease");
+		model.AddMovie(movie, release, user.getId());
 		
+		response.sendRedirect("movies.jsp");
 	}
 
 }

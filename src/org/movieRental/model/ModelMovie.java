@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -58,5 +59,30 @@ public class ModelMovie {
 		    }
 		    return list;
 	}
+
+	    
+public void AddMovie (String movie,String release,int idUser){
+	
+	Session session = sessionFactory.openSession();
+    Transaction transaction= null;
+    try {
+    	transaction = session.beginTransaction();
+    	SQLQuery query = session.createSQLQuery("INSERT INTO movies( name, releaseYear, idUser ) VALUES (?,?,?)");
+        query.setString(0, movie);
+        query.setString(1, release);
+        query.setInteger(2, idUser);
+    	query.executeUpdate();
+    	transaction.commit();
+		
+	} catch (Exception e) {
+		if(transaction != null){
+		transaction.rollback();	
+		
+		}e.printStackTrace();
+	}finally{
+    session.close(); 	    
+    }
+  }
 }
+
 

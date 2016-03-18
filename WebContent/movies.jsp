@@ -30,7 +30,7 @@
 
 </table>
 
-		<form action="" method="post" onsubmit="">
+		<form action="Movies" method="post" >
             <table border="0" cellspacing="2" cellpadding="5">
                 <thead>
                     <tr>
