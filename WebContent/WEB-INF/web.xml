@@ -24,4 +24,14 @@
     <servlet-name>ServletMovies</servlet-name>
     <url-pattern>/Movies</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletSearch</display-name>
+    <servlet-name>ServletSearch</servlet-name>
+    <servlet-class>org.movieRental.servlet.ServletSearch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSearch</servlet-name>
+    <url-pattern>/Search</url-pattern>
+  </servlet-mapping>
 </web-app>

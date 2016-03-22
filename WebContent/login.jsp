@@ -39,7 +39,7 @@
             
         </form>
 
-
-
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.js"></c:url>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/main.js"></c:url>"></script>
 </body>
 </html>

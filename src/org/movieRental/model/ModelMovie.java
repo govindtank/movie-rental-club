@@ -83,6 +83,31 @@ public void AddMovie (String movie,String release,int idUser){
     session.close(); 	    
     }
   }
+
+@SuppressWarnings("unchecked")
+public ArrayList <Movie> searchMovie(String name){
+	Session session = sessionFactory.openSession();
+	ArrayList<Movie> list= null;
+	Transaction transaction=null;
+	  try {
+	    	transaction = session.beginTransaction();
+	    	Criteria criteria = session.createCriteria(Movie.class);
+	    	criteria.add(Restrictions.like("name", "'"+ name +"%'"));
+	    	list = (ArrayList<Movie>) criteria.list();
+	    	
+	    	transaction.commit();
+			
+		} catch (Exception e) {
+			if(transaction != null){
+			transaction.rollback();	
+			
+			}e.printStackTrace();
+		}finally{
+	    session.close(); 	    
+	    }
+	    return list;
+}
+
 }
 
 

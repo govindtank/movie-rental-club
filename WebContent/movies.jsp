@@ -11,8 +11,10 @@
 
 <h1> ${username.getUser()}'s Movies</h1>
 
+<form action="Search" method="post" id="formSearch">
 <input type="text" name="txtSearch" id="inputSearch" placeholder="Search"/>
-<button  type="submit">Search</button>
+<button  type="submit" id="btnSearch">Search</button>
+</form>
 
 <table border="1" width="100%" id="tablaDatos">
 		<tr>
@@ -30,7 +32,7 @@
 
 </table>
 
-		<form action="Movies" method="post" >
+		<form action="Movies" method="post"  id="formAddMovie">
             <table border="0" cellspacing="2" cellpadding="5">
                 <thead>
                     <tr>
@@ -53,6 +55,7 @@
             	</table>
         </form>
 
-
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.js"></c:url>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/main.js"></c:url>"></script>
 </body>
 </html>

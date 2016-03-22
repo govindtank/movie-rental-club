@@ -1,13 +1,15 @@
 
 $(document).ready(function(){
 	
+	alert("WORKS");
+	
 	   $("#add").click(function(){
 	    	dataString = $("#").serialize();
 	    	$.ajax({
 	    		type: "POST",
-	    		url: "Login",
+	    		url: "Movies",
 	    		data: dataString,
-	    		dataType:"text",
+	    		dataType:"json",
 	    		
 	    		success: function (data , testStatus, jqXHR) {
 	    			console.log(data);
