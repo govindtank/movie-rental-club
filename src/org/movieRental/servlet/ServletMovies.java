@@ -12,6 +12,10 @@ import org.movieRental.entities.Movie;
 import org.movieRental.entities.User;
 import org.movieRental.model.ModelMovie;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
 /**
  * Servlet implementation class ServletMovies
  */
@@ -51,7 +55,17 @@ public class ServletMovies extends HttpServlet {
 		String release =request.getParameter("txtRelease");
 		model.AddMovie(movie, release, user.getId());
 		
-		response.sendRedirect("movies.jsp");
+		Gson gson = new Gson();
+		JsonObject myObj = new JsonObject();
+		JsonElement movieObj= gson.toJsonTree(movie);
+		myObj.addProperty("success", true);
+		myObj.add("movie", movieObj);
+		
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+		response.getWriter().println(myObj.toString());
+		
+	
 	}
 
 }

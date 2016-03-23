@@ -13,10 +13,11 @@
 
 <form action="Search" method="post" id="formSearch">
 <input type="text" name="txtSearch" id="inputSearch" placeholder="Search"/>
+<span></span>
 <button  type="submit" id="btnSearch">Search</button>
 </form>
 
-<table border="1" width="100%" id="tablaDatos">
+<table border="1" width="100%" id="dataTable">
 		<tr>
 			<th>Name</th>
 			<th>Release Year</th>
@@ -48,12 +49,15 @@
                         	<td><label>Release Year</label></td>
                         	<td><input type="text" name="txtRelease" id="inputRelease"/></td>
                     	</tr>
-                    	<tr>
-                         	<td><input type="submit" value="Add" id="btnAdd"  /></td> 
-                   	 	</tr>
+                    	
                 	</tbody>
             	</table>
+            	<button type="button" id="btnAdd">Add Movie</button>
         </form>
+        
+        <form action="Login" method="get" >
+		<input type="submit" value="Logout" />
+		</form>
 
 <script type="text/javascript" src="<c:url value="/resources/js/jquery.js"></c:url>"></script>
 <script type="text/javascript" src="<c:url value="/resources/js/main.js"></c:url>"></script>

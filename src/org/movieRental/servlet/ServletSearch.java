@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.movieRental.model.ModelMovie;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
 /**
  * Servlet implementation class ServletSearch
  */
@@ -37,6 +41,15 @@ public class ServletSearch extends HttpServlet {
 		String name = request.getParameter("txtSearch");
 		model.searchMovie(name);
 		
+		Gson gson = new Gson();
+		JsonObject myObj = new JsonObject();
+		JsonElement moviename = gson.toJsonTree(model);
+		myObj.addProperty("success", true);
+		myObj.add("name", moviename);
+		
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+		response.getWriter().println(myObj.toString());
 		
 	}
 
