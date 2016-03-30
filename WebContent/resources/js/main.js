@@ -2,6 +2,29 @@
 $(document).ready(function(){
 	
 	
+	$("#btnLogin").click(function(){
+    	dataString = $("#formLogin").serialize();
+    	$.ajax({
+    		type: "POST",
+    		url: "Login",
+    		data: dataString,
+    		dataType:"text",
+    		
+    		success: function (data , testStatus, jqXHR) {
+    			 if (data = true){
+    				 $(location).attr('href','Movies');
+    			 }else if(data = false){
+    				 $(location).attr('href','login.jsp');
+    			 }
+    			
+    		},
+    		error: function (jqXHR,textStatus,errorThrown){
+    		     console.log("something bad happend");
+    		}
+    	});
+
+    });
+	
 	
 	   $("#btnAdd").click(function(){
 	    	dataString = $("#formAddMovie").serialize();

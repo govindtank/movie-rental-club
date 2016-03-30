@@ -38,11 +38,14 @@ public class ServletMovies extends HttpServlet {
 		
 		User user= (User) request.getSession().getAttribute("username");
 		
+		if (user!= null){
 		
 		ArrayList<Movie> movie = model.ShowMoviesByUser(user.getId());
 		request.setAttribute("movie", movie);
 		request.getRequestDispatcher("movies.jsp").forward(request, response);
-		
+		}else{
+			response.sendRedirect("login.jsp");
+		}
 	}
 
 	/**
@@ -51,8 +54,8 @@ public class ServletMovies extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User user= (User) request.getSession().getAttribute("username");
 		
-		String movie =request.getParameter("txtMovie");
-		String release =request.getParameter("txtRelease");
+		String movie =request.getParameter("txtMovie").trim();
+		String release =request.getParameter("txtRelease").trim();
 		model.AddMovie(movie, release, user.getId());
 		
 		Gson gson = new Gson();

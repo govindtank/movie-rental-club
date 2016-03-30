@@ -42,16 +42,18 @@ public class ServletLogin extends HttpServlet {
 	
 		HttpSession session = request.getSession(true);
 		
-		String username = request.getParameter("txtUser").trim();
-		String password = request.getParameter("txtPassword").trim();
+		String username = request.getParameter("txtUser");
+		String password = request.getParameter("txtPassword");
 		boolean result = model.Autenticate(username, password);
 		User user = model.getUserByName(username);
 		
 		if (result == true){
 			session.setAttribute("username", user);
-			response.sendRedirect("Movies");
+			response.setContentType("text/html;charset=UTF-8");
+            response.getWriter().write("True");
 		}else{
-			response.sendRedirect("login.jsp");
+			response.setContentType("text/html;charset=UTF-8");
+            response.getWriter().write("false");
 			
 		}	
 		

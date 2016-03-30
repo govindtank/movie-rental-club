@@ -12,7 +12,7 @@
  <h1>Moovies Rent Club</h1>
  
  
-<form action="Login" method="post" >
+<form action="Login" method="post" id="formLogin">
             <table border="0" cellspacing="2" cellpadding="5">
                 <thead>
                     <tr>
@@ -29,13 +29,10 @@
                         <td><input type="password" name="txtPassword" id="passInput"/></td>
                     </tr>
                     
-                    <tr>
-                        <td><input type="submit" value="Log-in" id="btnSend"  /></td> 
-                        
-                    </tr>
+                    
                 </tbody>
             </table>
-            
+            <button type="button" id="btnLogin">Login</button>
             
         </form>
 
