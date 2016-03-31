@@ -19,26 +19,14 @@
  
  
             <form action="Login" method="post" id="formLogin">
-                <table border="0" cellspacing="2" cellpadding="5">
-                    <thead>
-                        <tr>
-                            <th colspan="2">Moovies Login</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><label>User</label></td>
-                            <td><input type="text" name="txtUser" id="userInput"/></td>
-                        </tr>
-                        <tr>
-                            <td><label>Password</label></td>
-                            <td><input type="password" name="txtPassword" id="passInput"/></td>
-                        </tr>
+                
+                            <h3>Moovies Login</h3>
+                        
+                           <input type="text" name="txtUser" id="userInput" placeholder="user"/>
+                      
+                           <input type="password" name="txtPassword" id="passInput" placeholder="password"/>
                     
-                    
-                    </tbody>
-                </table>
-                <button type="button" id="btnLogin">Login</button>
+                		   <button type="button" id="btnLogin">Login</button>
             
             </form>
     </div>    

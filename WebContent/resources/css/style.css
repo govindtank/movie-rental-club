@@ -1,13 +1,154 @@
-//login 
+//login.jsp 
 
-body{
-	background-color: #eceff1;
+body, th {
+	background-color: cfd8dc;
+	vertical-align: bottom;
 }
-.container{
-	width: 80%;
 
+.container{
+	width:100%;
 }
 .formLogin{
-	width:100%;
+	width:300px;
 	background-color: #b0bec5;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 4px;
 }
+#userInput{
+	width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#passInput{
+	width:70%;
+	padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#btnLogin{
+	width:70%;
+	padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #546e7a;
+    font-size: 16px;
+    color:white;
+}
+#btnLogin:hover{
+	background-color: #455a64;
+}
+//movies.jsp
+
+.searchBar{
+ 	
+}
+#inputSearch{
+	width:300px;
+	padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#btnSearch{
+	width:150px;
+	padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #546e7a;
+    color:white;
+}
+#btnSearch:hover{
+	background-color: #455a64;
+}
+.moviesTable{
+    
+   
+}
+#dataTable {
+	border-collapse: collapse;
+    width: 100%;
+}
+th{
+	background-color: #37474f;
+    color: white;
+}
+th,td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+   
+}
+.formAddMovie{
+ 
+   
+}
+#inputMovie{
+	width:300px;
+	padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#inputRelease{
+	width:300px;
+	padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#btnAdd{
+	width:150px;
+	padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #546e7a;
+    color:white;
+}
+#btnAdd:hover{
+	background-color: #455a64;
+}
+
+
+.logout{
+   
+}
+#logout{
+    float: right;
+	width:100px;
+	padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color:#d32f2f;
+    color:white;
+}
+#logout:hover{
+	background-color: #b71c1c;
+}
+
+
